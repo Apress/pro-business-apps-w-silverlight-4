@@ -1,0 +1,30 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!--NOTE: All styles defined here are made available application-wide by
+    merging this resource dictionary with the application's resources in App.xaml-->
+
+    <!--Constant-->
+    <SolidColorBrush x:Key="BackgroundColorResource" Color="LemonChiffon "/>
+
+    <!--Base style-->
+    <Style x:Key="UserFieldsStyleBase" TargetType="TextBox">
+        <Setter Property="Margin" Value="2" />
+        <Setter Property="Width" Value="200" />
+        
+        <!--Demonstrates using a constant (defined above)-->
+        <Setter Property="Background" Value="{StaticResource BackgroundColorResource}" />
+    </Style>
+
+    <!--Inherited style + referred to explicitly in MainPage.xaml by name-->
+    <Style x:Key="UserFieldsStyle" TargetType="TextBox" BasedOn="{StaticResource UserFieldsStyleBase}">
+        <!--Sets the Background property inherited from UserFieldsStyleBase back to its default value-->
+        <Setter Property="Background" Value="{x:Null}" />
+    </Style>
+
+    <!--Inherited style + no key provided, meaning that this is an implicit style
+    that will be used by all text boxes in the scope where it is defined-->
+    <Style TargetType="TextBox" BasedOn="{StaticResource UserFieldsStyleBase}">
+    </Style>
+</ResourceDictionary>

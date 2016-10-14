@@ -1,0 +1,83 @@
+﻿<navigation:Page x:Class="Chapter14Sample.Views.Network" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           d:DesignWidth="640" d:DesignHeight="480"
+           Title="Network Page">
+	<navigation:Page.Resources>
+		<!--<Style x:Key="ToggleButtonStyle1" TargetType="ToggleButton">
+            <Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="ToggleButton">
+						<Grid>
+							<VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CheckStates">
+                                    <VisualState x:Name="Indeterminate" />
+                                    <VisualState x:Name="Checked" >
+                                    	<Storyboard>
+                                    		<ColorAnimation Duration="0" To="Green" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="NetworkStateBorder" d:IsOptimized="True"/>
+                                    		<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="NetworkStateText">
+                                    			<DiscreteObjectKeyFrame KeyTime="0" Value="A network connection is available"/>
+                                    		</ObjectAnimationUsingKeyFrames>
+                                    	</Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Unchecked">
+                                    	<Storyboard>
+                                    		<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="NetworkStateText">
+                                    			<DiscreteObjectKeyFrame KeyTime="0" Value="No network connection is available"/>
+                                    		</ObjectAnimationUsingKeyFrames>
+                                    		<ColorAnimation Duration="0" To="Red" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="NetworkStateBorder" d:IsOptimized="True"/>
+                                    	</Storyboard>
+                                    </VisualState>
+								</VisualStateGroup>
+							</VisualStateManager.VisualStateGroups>
+                            <Border Name="NetworkStateBorder" BorderBrush="Black" BorderThickness="2" Background="Orange">
+                                <TextBlock Name="NetworkStateText" Text="Network state unknown" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" />
+                            </Border>
+						</Grid>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>-->
+	</navigation:Page.Resources>
+    <Grid x:Name="LayoutRoot">
+        <!--<Border Name="NetworkStateBorder" BorderBrush="Black" BorderThickness="2" Background="Orange" Height="90" Width="350">
+            <TextBlock Name="NetworkStateText" Text="[Current State]" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" />
+        </Border>-->
+        <ToggleButton Name="NetworkStateIndicator" Width="350" Height="90" IsEnabled="False">
+            <ToggleButton.Template>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CheckStates">
+                                <VisualState x:Name="Indeterminate" />
+                                <VisualState x:Name="Checked" >
+                                    <Storyboard>
+                                        <ColorAnimation Duration="0" To="Green" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="NetworkStateBorder" d:IsOptimized="True"/>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="NetworkStateText">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="A network connection is available"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Unchecked">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="NetworkStateText">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="No network connection is available"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ColorAnimation Duration="0" To="Red" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="NetworkStateBorder" d:IsOptimized="True"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border Name="NetworkStateBorder" BorderBrush="Black" BorderThickness="2" Background="Orange">
+                            <TextBlock Name="NetworkStateText" Text="Network state unknown" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </ToggleButton.Template>
+        </ToggleButton>
+    </Grid>
+</navigation:Page>

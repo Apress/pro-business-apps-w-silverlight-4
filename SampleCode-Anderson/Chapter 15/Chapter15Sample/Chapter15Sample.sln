@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter15Sample", "Chapter15Sample\Chapter15Sample.csproj", "{50A45CEB-CA0F-430A-AB1D-488CDC3A6A85}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E62BA256-3C52-49E2-B06B-3693D914465D} = {E62BA256-3C52-49E2-B06B-3693D914465D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter15Sample.Web", "Chapter15Sample.Web\Chapter15Sample.Web.csproj", "{E62BA256-3C52-49E2-B06B-3693D914465D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCachingLibrary", "TestCachingLibrary\TestCachingLibrary.csproj", "{0284AC1D-5C0F-46D4-9F09-B5DA360CDE12}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{52003DD1-460C-469E-B58D-3E9A8CDF0E30}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.txt = Readme.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50A45CEB-CA0F-430A-AB1D-488CDC3A6A85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50A45CEB-CA0F-430A-AB1D-488CDC3A6A85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50A45CEB-CA0F-430A-AB1D-488CDC3A6A85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50A45CEB-CA0F-430A-AB1D-488CDC3A6A85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E62BA256-3C52-49E2-B06B-3693D914465D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E62BA256-3C52-49E2-B06B-3693D914465D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E62BA256-3C52-49E2-B06B-3693D914465D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E62BA256-3C52-49E2-B06B-3693D914465D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0284AC1D-5C0F-46D4-9F09-B5DA360CDE12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0284AC1D-5C0F-46D4-9F09-B5DA360CDE12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0284AC1D-5C0F-46D4-9F09-B5DA360CDE12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0284AC1D-5C0F-46D4-9F09-B5DA360CDE12}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

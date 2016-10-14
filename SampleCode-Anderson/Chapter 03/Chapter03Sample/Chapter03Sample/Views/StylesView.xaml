@@ -1,0 +1,36 @@
+﻿<navigation:Page x:Class="Chapter03Sample.Views.StylesView" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           d:DesignWidth="640" d:DesignHeight="480"
+           Title="Styles">
+    <navigation:Page.Resources>
+        <Style TargetType="TextBox" x:Key="TextBoxStyle">
+            <Setter Property="Background" Value="LemonChiffon" />
+            <Setter Property="Foreground" Value="Brown" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+    </navigation:Page.Resources>
+    
+    <Grid x:Name="LayoutRoot">
+        <Grid Width="300">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Using Inline Styles: " Grid.Row="0" VerticalAlignment="Center" />
+            <TextBox Background="LemonChiffon" Foreground="Brown" FontWeight="Bold" Grid.Column="1" Grid.Row="0" Margin="3" />
+
+            <TextBlock Text="Using a Style Resource: " Grid.Row="1" VerticalAlignment="Center" />
+            <TextBox Style="{StaticResource TextBoxStyle}" Grid.Column="1" Grid.Row="1" Margin="3" />
+        </Grid>
+    </Grid>
+</navigation:Page>

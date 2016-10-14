@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter13Sample", "Chapter13Sample\Chapter13Sample.csproj", "{0B22998C-AC54-4ADF-849B-56D6304B5B41}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D41EFED9-D865-49F8-94CB-AE20B8314750} = {D41EFED9-D865-49F8-94CB-AE20B8314750}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter13Sample.Web", "Chapter13Sample.Web\Chapter13Sample.Web.csproj", "{D41EFED9-D865-49F8-94CB-AE20B8314750}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4F395488-A589-47E1-A01C-7BF1C6C32871}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.txt = Readme.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B22998C-AC54-4ADF-849B-56D6304B5B41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B22998C-AC54-4ADF-849B-56D6304B5B41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B22998C-AC54-4ADF-849B-56D6304B5B41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B22998C-AC54-4ADF-849B-56D6304B5B41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D41EFED9-D865-49F8-94CB-AE20B8314750}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D41EFED9-D865-49F8-94CB-AE20B8314750}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D41EFED9-D865-49F8-94CB-AE20B8314750}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D41EFED9-D865-49F8-94CB-AE20B8314750}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

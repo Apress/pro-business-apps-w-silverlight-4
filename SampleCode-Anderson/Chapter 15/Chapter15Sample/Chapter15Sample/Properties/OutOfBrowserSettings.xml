@@ -1,0 +1,15 @@
+<OutOfBrowserSettings ShortName="AdventureWorks" EnableGPUAcceleration="False" ShowInstallMenuItem="True">
+  <OutOfBrowserSettings.Blurb>Chapter15Sample Application on your desktop; at home, at work or on the go.</OutOfBrowserSettings.Blurb>
+  <OutOfBrowserSettings.WindowSettings>
+    <WindowSettings Title="AdventureWorks" />
+  </OutOfBrowserSettings.WindowSettings>
+  <OutOfBrowserSettings.SecuritySettings>
+    <SecuritySettings ElevatedPermissions="Required" />
+  </OutOfBrowserSettings.SecuritySettings>
+  <OutOfBrowserSettings.Icons>
+    <Icon Size="16,16">Icon16.png</Icon>
+    <Icon Size="32,32">Icon32.png</Icon>
+    <Icon Size="48,48">Icon48.png</Icon>
+    <Icon Size="128,128">Icon128.png</Icon>
+  </OutOfBrowserSettings.Icons>
+</OutOfBrowserSettings>

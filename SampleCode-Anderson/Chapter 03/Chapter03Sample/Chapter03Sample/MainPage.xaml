@@ -1,0 +1,75 @@
+﻿<UserControl
+    x:Class="Chapter03Sample.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation" 
+    xmlns:uriMapper="clr-namespace:System.Windows.Navigation;assembly=System.Windows.Controls.Navigation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="640" d:DesignHeight="480">
+
+    <Grid x:Name="LayoutRoot" Style="{StaticResource LayoutRootGridStyle}">
+
+        <Border x:Name="ContentBorder" Style="{StaticResource ContentBorderStyle}">
+
+            <navigation:Frame x:Name="ContentFrame" Style="{StaticResource ContentFrameStyle}" 
+                              Source="/ButtonContent" Navigated="ContentFrame_Navigated" NavigationFailed="ContentFrame_NavigationFailed">
+                <navigation:Frame.UriMapper>
+                  <uriMapper:UriMapper>
+                        <uriMapper:UriMapping Uri="" MappedUri="/Views/ButtonContent.xaml"/>
+                    <uriMapper:UriMapping Uri="/{pageName}" MappedUri="/Views/{pageName}View.xaml"/>
+                  </uriMapper:UriMapper>
+                </navigation:Frame.UriMapper>
+            </navigation:Frame>
+        </Border>
+
+        <Grid x:Name="NavigationGrid" Style="{StaticResource NavigationGridStyle}">
+
+            <Border x:Name="BrandingBorder" Style="{StaticResource BrandingBorderStyle}">
+                <StackPanel x:Name="BrandingStackPanel" Style="{StaticResource BrandingStackPanelStyle}">
+
+                    <ContentControl Style="{StaticResource LogoIcon}"/>
+                    <TextBlock x:Name="ApplicationNameTextBlock" Style="{StaticResource ApplicationNameStyle}" 
+                               Text="Chapter 3 Samples"/>
+
+                </StackPanel>
+            </Border>
+
+            <Border x:Name="LinksBorder" Style="{StaticResource LinksBorderStyle}">
+                <StackPanel x:Name="LinksStackPanel" Style="{StaticResource LinksStackPanelStyle}">
+
+                    <HyperlinkButton Style="{StaticResource LinkStyle}" 
+                                     NavigateUri="/ButtonContent" TargetName="ContentFrame" Content="button content"/>
+									 
+                    <Rectangle Style="{StaticResource DividerStyle}"/>
+					
+                    <HyperlinkButton Style="{StaticResource LinkStyle}" 
+                                     NavigateUri="/SimpleUI" TargetName="ContentFrame" Content="simple ui"/>
+
+                    <Rectangle Style="{StaticResource DividerStyle}"/>
+
+                    <HyperlinkButton Style="{StaticResource LinkStyle}" 
+                                     NavigateUri="/Resources" TargetName="ContentFrame" Content="resources"/>
+
+                    <Rectangle Style="{StaticResource DividerStyle}"/>
+
+                    <HyperlinkButton Style="{StaticResource LinkStyle}" 
+                                     NavigateUri="/Styles" TargetName="ContentFrame" Content="styles"/>
+
+                    <Rectangle Style="{StaticResource DividerStyle}"/>
+
+                    <HyperlinkButton Style="{StaticResource LinkStyle}" 
+                                     NavigateUri="/BoundSimpleUI" TargetName="ContentFrame" Content="simple ui + binding"/>
+
+                    <Rectangle Style="{StaticResource DividerStyle}"/>
+
+                    <HyperlinkButton Style="{StaticResource LinkStyle}" 
+                                     NavigateUri="/BindingToACollection" TargetName="ContentFrame" Content="binding to a collection"/>
+
+                </StackPanel>
+            </Border>
+
+        </Grid>
+
+    </Grid>
+
+</UserControl>

@@ -1,0 +1,2 @@
+C:\Projects\Books\Silverlight\Code\Chapter 15\Chapter15Sample\Chapter15Sample\Generated_Code\Chapter15Sample.Web.g.cs
+C:\Projects\Books\Silverlight\Code\Chapter 15\Chapter15Sample\Chapter15Sample\Generated_Code\Models\Shared\User.shared.cs

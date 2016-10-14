@@ -1,0 +1,1 @@
+C:\Projects\Books\Silverlight\Code\Chapter 15\Chapter15Sample\TestCachingLibrary\TestCachingLibrary.csproj,634125071005176421,

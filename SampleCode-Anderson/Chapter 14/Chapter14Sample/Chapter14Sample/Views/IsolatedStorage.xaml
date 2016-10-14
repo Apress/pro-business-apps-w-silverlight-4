@@ -1,0 +1,27 @@
+﻿<navigation:Page x:Class="Chapter14Sample.Views.IsolatedStorage" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:is="clr-namespace:System.IO.IsolatedStorage;assembly=mscorlib"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           d:DesignWidth="640" d:DesignHeight="480"
+           Title="Caching Page">
+    <Grid x:Name="LayoutRoot">
+        <Line Y1="150" Y2="150" X2="1000" Stroke="Black" />
+        <Line Y1="300" Y2="300" X2="1000" Stroke="Black" />
+        <Button Content="Get Setting" Height="32" HorizontalAlignment="Left" Margin="69,19,0,0" Name="GetSettingButton" VerticalAlignment="Top" Width="110" Click="GetSettingButton_Click" />
+        <Button Content="Save Setting" Height="32" HorizontalAlignment="Left" Margin="69,57,0,0" Name="SaveSettingButton" VerticalAlignment="Top" Width="110" Click="SaveSettingButton_Click" />
+        <Button Content="Delete Setting" Height="32" HorizontalAlignment="Left" Margin="69,95,0,0" Name="DeleteSettingButton" VerticalAlignment="Top" Width="110" Click="DeleteSettingButton_Click" />
+        <TextBox Height="25" HorizontalAlignment="Left" Margin="281,73,0,0" Name="SettingValueTextBox" VerticalAlignment="Top" Width="133" />
+        <TextBox Height="25" HorizontalAlignment="Left" Margin="281,35,0,0" Name="SettingNameTextBox" VerticalAlignment="Top" Width="133" Text="Test" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="220,37,0,0" Name="textBlock1" Text="Name:" VerticalAlignment="Top" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="220,75,0,0" Name="textBlock2" Text="Value:" VerticalAlignment="Top" />
+        
+        <Button Content="Write File" Height="35" HorizontalAlignment="Left" Margin="69,188,0,0" Name="WriteFileButton" VerticalAlignment="Top" Width="110" Click="WriteFileButton_Click" />
+        <Button Content="Read File" Height="35" HorizontalAlignment="Left" Margin="69,229,0,0" Name="ReadFileButton" VerticalAlignment="Top" Width="110" Click="ReadFileButton_Click" />
+        <Button Content="Quota" Height="35" HorizontalAlignment="Left" Margin="69,340,0,0" Name="QuotaButton" VerticalAlignment="Top" Width="110" Click="QuotaButton_Click" />
+        <Button Content="Increase Quota" Height="35" HorizontalAlignment="Left" Margin="69,381,0,0" Name="IncreaseQuotaButton" VerticalAlignment="Top" Width="110" Click="IncreaseQuotaButton_Click" />
+    </Grid>
+</navigation:Page>

@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="Chapter11Sample.FormField"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" 
+    mc:Ignorable="d"
+    DataContext="{Binding RelativeSource={RelativeSource Self}}"
+    Height="30" Width="300" SizeChanged="UserControl_SizeChanged">
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120" />
+            <ColumnDefinition Width="180" />
+        </Grid.ColumnDefinitions>
+        
+        <sdk:Label Name="dataLabel" Padding="0,0,5,0" 
+               HorizontalAlignment="Right" HorizontalContentAlignment="Left" 
+               Content="{Binding Path=FieldLabel}" 
+               Target="{Binding ElementName=dataField}" />
+        <TextBox Name="dataField" HorizontalAlignment="Left" VerticalAlignment="Center" 
+             Text="{Binding Path=FieldValue, Mode=TwoWay}" 
+             Grid.Column="1" Width="170" />
+    </Grid>
+</UserControl>

@@ -1,0 +1,46 @@
+﻿<sdk:Page  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+           xmlns:vm="clr-namespace:AdventureWorks.ViewModels"
+           xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+           xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+           xmlns:SimpleMVVM="clr-namespace:SimpleMVVM" x:Class="AdventureWorks.Views.LoginView"
+           mc:Ignorable="d"
+           Title="Login">
+    <sdk:Page.DataContext>
+        <vm:LoginViewModel /> 
+    </sdk:Page.DataContext>
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger SourceObject="{Binding Mode=OneWay}" 
+                        EventName="LoginSuccessful">
+            <SimpleMVVM:NavigateAction Url="/ProductDetailsView" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    
+    <Grid x:Name="LayoutRoot" Background="White" Width="300" Height="110">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="90" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+    
+        <sdk:Label Content="User Name:" Margin="5,0" HorizontalContentAlignment="Right" />
+        <sdk:Label Content="Password:" Margin="5,0" HorizontalContentAlignment="Right" Grid.Row="1" />
+            
+        <TextBox Grid.Column="1" x:Name="UserNameTextBox" Height="25" Text="{Binding UserName, Mode=TwoWay}" />
+        <TextBox Grid.Column="1" Grid.Row="1" x:Name="PasswordTextBox" Height="25" Text="{Binding Password, Mode=TwoWay}" />
+            
+        <Button Content="Log In" Grid.Column="1" Grid.Row="2" Height="30" Width="90" 
+                HorizontalAlignment="Right" VerticalAlignment="Top" 
+                x:Name="LoginButton" Margin="0,5,0,0" Command="{Binding Login}">
+        </Button>            
+    </Grid>
+</sdk:Page>

@@ -1,0 +1,15 @@
+<OutOfBrowserSettings ShortName="Chapter 14 Sample" EnableGPUAcceleration="False" ShowInstallMenuItem="True">
+  <OutOfBrowserSettings.Blurb>A business application for the AdventureWorks company.</OutOfBrowserSettings.Blurb>
+  <OutOfBrowserSettings.WindowSettings>
+    <WindowSettings Title="Chapter 14 Sample" Top="110" Left="110" WindowStartupLocation="CenterScreen" WindowStyle="BorderlessRoundCornersWindow" />
+  </OutOfBrowserSettings.WindowSettings>
+  <OutOfBrowserSettings.SecuritySettings>
+    <SecuritySettings ElevatedPermissions="Required" />
+  </OutOfBrowserSettings.SecuritySettings>
+  <OutOfBrowserSettings.Icons>
+    <Icon Size="16,16">Images/Icon16.png</Icon>
+    <Icon Size="32,32">Images/Icon32.png</Icon>
+    <Icon Size="48,48">Images/Icon64.png</Icon>
+    <Icon Size="128,128">Images/Icon128.png</Icon>
+  </OutOfBrowserSettings.Icons>
+</OutOfBrowserSettings>

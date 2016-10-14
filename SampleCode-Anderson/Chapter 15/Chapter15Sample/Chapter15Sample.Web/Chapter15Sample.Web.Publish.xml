@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="localhost" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="Default Web Site/AdventureWorks" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="True" profileName="Profile1" publishMethod="MSDeploy" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="Chapter15SampleTestPage.html" publishTime="06/15/2010 03:45:17" />
+    <file relUrl="bin/Chapter15Sample.Web.dll" publishTime="06/15/2010 03:50:00" />
+    <file relUrl="bin/Chapter15Sample.Web.pdb" publishTime="06/15/2010 03:50:00" />
+    <file relUrl="Web.config" publishTime="06/15/2010 06:45:53" />
+    <file relUrl="Silverlight.js" publishTime="06/15/2010 03:45:17" />
+    <file relUrl="Chapter15SampleTestPage.aspx" publishTime="06/15/2010 06:44:51" />
+    <file relUrl="ClientBin/Chapter15Sample.xap" publishTime="06/15/2010 03:50:40" />
+  </publishProfile>
+</publishData>

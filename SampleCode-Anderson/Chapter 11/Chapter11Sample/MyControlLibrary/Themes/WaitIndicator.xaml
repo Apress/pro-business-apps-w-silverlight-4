@@ -1,0 +1,187 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:MyControlLibrary" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d">
+
+    <Style TargetType="local:WaitIndicator">
+        <Setter Property="Width" Value="30" />
+        <Setter Property="Height" Value="30" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:WaitIndicator">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition GeneratedDuration="0:0:5" To="Active">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0:0:5" From="0" To="100"
+                                                         Storyboard.TargetProperty="(UIElement.Opacity)" 
+                                                         Storyboard.TargetName="LayoutRoot" d:IsOptimized="True"/>
+                                        </Storyboard>
+                                    </VisualTransition>
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="Inactive" />
+                                <VisualState x:Name="Static">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" To="100" 
+                                                         Storyboard.TargetProperty="(UIElement.Opacity)" 
+                                                         Storyboard.TargetName="LayoutRoot" d:IsOptimized="True"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Active">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0:0:1" To="100" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LayoutRoot" d:IsOptimized="True"/>
+
+                                        <ColorAnimationUsingKeyFrames 
+                                                Storyboard.TargetName="Ellipse1"
+                                                Storyboard.TargetProperty="(Fill).(SolidBrush.Color)"
+                                                BeginTime="0" RepeatBehavior="Forever">
+
+                                            <LinearColorKeyFrame Value="#CC777777" KeyTime="00:00:00" />
+                                            <LinearColorKeyFrame Value="#9C777777" KeyTime="00:00:00.15" />
+                                            <LinearColorKeyFrame Value="#6D777777" KeyTime="00:00:00.3" />
+                                            <LinearColorKeyFrame Value="#3E777777" KeyTime="00:00:00.45" />
+                                            <LinearColorKeyFrame Value="#2E777777" KeyTime="00:00:00.60" />
+                                            <LinearColorKeyFrame Value="#1E777777" KeyTime="00:00:00.75" />
+                                            <LinearColorKeyFrame Value="#1E777777" KeyTime="00:00:00.90" />
+                                            <LinearColorKeyFrame Value="#1E777777" KeyTime="00:00:01.05" />
+                                            <LinearColorKeyFrame Value="#CC777777" KeyTime="00:00:01.20" />
+                                        </ColorAnimationUsingKeyFrames>
+
+                                        <ColorAnimationUsingKeyFrames 
+                                              Storyboard.TargetName="Ellipse2"
+                                              Storyboard.TargetProperty="(Fill).(SolidBrush.Color)"
+                                              BeginTime="0" RepeatBehavior="Forever">
+
+                                            <LinearColorKeyFrame Value="#1E777777" KeyTime="00:00:00" />
+                                            <LinearColorKeyFrame Value="#CC777777" KeyTime="00:00:00.15" />
+                                            <LinearColorKeyFrame Value="#9C777777" KeyTime="00:00:00.3" />
+                                            <LinearColorKeyFrame Value="#6D777777" KeyTime="00:00:00.45" />
+                                            <LinearColorKeyFrame Value="#3E777777" KeyTime="00:00:00.60" />
+                                            <LinearColorKeyFrame Value="#2E777777" KeyTime="00:00:00.75" />
+                                            <LinearColorKeyFrame Value="#1E777777" KeyTime="00:00:00.90" />
+                                            <LinearColorKeyFrame Value="#1E777777" KeyTime="00:00:01.05" />
+                                            <LinearColorKeyFrame Value="#1E777777" KeyTime="00:00:01.20" />
+                                        </ColorAnimationUsingKeyFrames>
+
+                                        <ColorAnimationUsingKeyFrames 
+                                              Storyboard.TargetName="Ellipse3"
+                                              Storyboard.TargetProperty="(Fill).(SolidBrush.Color)"
+                                              BeginTime="0" RepeatBehavior="Forever">
+
+                                            <LinearColorKeyFrame Value="#1E777777" KeyTime="00:00:00" />
+                                            <LinearColorKeyFrame Value="#1E777777" KeyTime="00:00:00.15" />
+                                            <LinearColorKeyFrame Value="#CC777777" KeyTime="00:00:00.3" />
+                                            <LinearColorKeyFrame Value="#9C777777" KeyTime="00:00:00.45" />
+                                            <LinearColorKeyFrame Value="#6D777777" KeyTime="00:00:00.60" />
+                                            <LinearColorKeyFrame Value="#3E777777" KeyTime="00:00:00.75" />
+                                            <LinearColorKeyFrame Value="#2E777777" KeyTime="00:00:00.90" />
+                                            <LinearColorKeyFrame Value="#1E777777" KeyTime="00:00:01.05" />
+                                            <LinearColorKeyFrame Value="#1E777777" KeyTime="00:00:01.20" />
+                                        </ColorAnimationUsingKeyFrames>
+
+                                        <ColorAnimationUsingKeyFrames 
+                                              Storyboard.TargetName="Ellipse4"
+                                              Storyboard.TargetProperty="(Fill).(SolidBrush.Color)"
+                                              BeginTime="0" RepeatBehavior="Forever">
+
+                                            <LinearColorKeyFrame Value="#1E777777" KeyTime="00:00:00" />
+                                            <LinearColorKeyFrame Value="#1E777777" KeyTime="00:00:00.15" />
+                                            <LinearColorKeyFrame Value="#1E777777" KeyTime="00:00:00.3" />
+                                            <LinearColorKeyFrame Value="#CC777777" KeyTime="00:00:00.45" />
+                                            <LinearColorKeyFrame Value="#9C777777" KeyTime="00:00:00.60" />
+                                            <LinearColorKeyFrame Value="#6D777777" KeyTime="00:00:00.75" />
+                                            <LinearColorKeyFrame Value="#3E777777" KeyTime="00:00:00.90" />
+                                            <LinearColorKeyFrame Value="#2E777777" KeyTime="00:00:01.05" />
+                                            <LinearColorKeyFrame Value="#1E777777" KeyTime="00:00:01.20" />
+                                        </ColorAnimationUsingKeyFrames>
+
+                                        <ColorAnimationUsingKeyFrames 
+                                              Storyboard.TargetName="Ellipse5"
+                                              Storyboard.TargetProperty="(Fill).(SolidBrush.Color)"
+                                              BeginTime="0" RepeatBehavior="Forever">
+
+                                            <LinearColorKeyFrame Value="#2E777777" KeyTime="00:00:00" />
+                                            <LinearColorKeyFrame Value="#1E777777" KeyTime="00:00:00.15" />
+                                            <LinearColorKeyFrame Value="#1E777777" KeyTime="00:00:00.3" />
+                                            <LinearColorKeyFrame Value="#1E777777" KeyTime="00:00:00.45" />
+                                            <LinearColorKeyFrame Value="#CC777777" KeyTime="00:00:00.60" />
+                                            <LinearColorKeyFrame Value="#9C777777" KeyTime="00:00:00.75" />
+                                            <LinearColorKeyFrame Value="#6D777777" KeyTime="00:00:00.90" />
+                                            <LinearColorKeyFrame Value="#3E777777" KeyTime="00:00:01.05" />
+                                            <LinearColorKeyFrame Value="#2E777777" KeyTime="00:00:01.20" />
+                                        </ColorAnimationUsingKeyFrames>
+
+                                        <ColorAnimationUsingKeyFrames 
+                                              Storyboard.TargetName="Ellipse6"
+                                              Storyboard.TargetProperty="(Fill).(SolidBrush.Color)"
+                                              BeginTime="0" RepeatBehavior="Forever">
+
+                                            <LinearColorKeyFrame Value="#3E777777" KeyTime="00:00:00" />
+                                            <LinearColorKeyFrame Value="#2E777777" KeyTime="00:00:00.15" />
+                                            <LinearColorKeyFrame Value="#1E777777" KeyTime="00:00:00.3" />
+                                            <LinearColorKeyFrame Value="#1E777777" KeyTime="00:00:00.45" />
+                                            <LinearColorKeyFrame Value="#1E777777" KeyTime="00:00:00.60" />
+                                            <LinearColorKeyFrame Value="#CC777777" KeyTime="00:00:00.75" />
+                                            <LinearColorKeyFrame Value="#9C777777" KeyTime="00:00:00.90" />
+                                            <LinearColorKeyFrame Value="#6D777777" KeyTime="00:00:01.05" />
+                                            <LinearColorKeyFrame Value="#3E777777" KeyTime="00:00:01.20" />
+                                        </ColorAnimationUsingKeyFrames>
+
+                                        <ColorAnimationUsingKeyFrames 
+                                              Storyboard.TargetName="Ellipse7"
+                                              Storyboard.TargetProperty="(Fill).(SolidBrush.Color)"
+                                              BeginTime="0" RepeatBehavior="Forever">
+
+                                            <LinearColorKeyFrame Value="#6D777777" KeyTime="00:00:00" />
+                                            <LinearColorKeyFrame Value="#3E777777" KeyTime="00:00:00.15" />
+                                            <LinearColorKeyFrame Value="#2E777777" KeyTime="00:00:00.3" />
+                                            <LinearColorKeyFrame Value="#1E777777" KeyTime="00:00:00.45" />
+                                            <LinearColorKeyFrame Value="#1E777777" KeyTime="00:00:00.60" />
+                                            <LinearColorKeyFrame Value="#1E777777" KeyTime="00:00:00.75" />
+                                            <LinearColorKeyFrame Value="#CC777777" KeyTime="00:00:00.90" />
+                                            <LinearColorKeyFrame Value="#9C777777" KeyTime="00:00:01.05" />
+                                            <LinearColorKeyFrame Value="#6D777777" KeyTime="00:00:01.20" />
+                                        </ColorAnimationUsingKeyFrames>
+
+                                        <ColorAnimationUsingKeyFrames 
+                                              Storyboard.TargetName="Ellipse8"
+                                              Storyboard.TargetProperty="(Fill).(SolidBrush.Color)"
+                                              BeginTime="0" RepeatBehavior="Forever">
+
+                                            <LinearColorKeyFrame Value="#9C777777" KeyTime="00:00:00" />
+                                            <LinearColorKeyFrame Value="#6D777777" KeyTime="00:00:00.15" />
+                                            <LinearColorKeyFrame Value="#3E777777" KeyTime="00:00:00.3" />
+                                            <LinearColorKeyFrame Value="#2E777777" KeyTime="00:00:00.45" />
+                                            <LinearColorKeyFrame Value="#1E777777" KeyTime="00:00:00.60" />
+                                            <LinearColorKeyFrame Value="#1E777777" KeyTime="00:00:00.75" />
+                                            <LinearColorKeyFrame Value="#1E777777" KeyTime="00:00:00.90" />
+                                            <LinearColorKeyFrame Value="#CC777777" KeyTime="00:00:01.05" />
+                                            <LinearColorKeyFrame Value="#9C777777" KeyTime="00:00:01.20" />
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Canvas x:Name="LayoutRoot" Opacity="0">
+                            <Ellipse x:Name="Ellipse1" Fill="#1E777777" Canvas.Left="0" Canvas.Top="11" Height="8" Width="8"/>
+                            <Ellipse x:Name="Ellipse2" Fill="#1E777777" Canvas.Left="3" Canvas.Top="3" Height="8" Width="8"/>
+                            <Ellipse x:Name="Ellipse3" Fill="#1E777777" Canvas.Left="11" Canvas.Top="0" Height="8" Width="8"/>
+                            <Ellipse x:Name="Ellipse4" Fill="#2E777777" Canvas.Left="19" Canvas.Top="3" Height="8" Width="8"/>
+                            <Ellipse x:Name="Ellipse5" Fill="#3E777777" Canvas.Left="22" Canvas.Top="11" Height="8" Width="8"/>
+                            <Ellipse x:Name="Ellipse6" Fill="#6D777777" Canvas.Left="19" Canvas.Top="19" Height="8" Width="8"/>
+                            <Ellipse x:Name="Ellipse7" Fill="#9C777777" Canvas.Left="11" Canvas.Top="22" Height="8" Width="8"/>
+                            <Ellipse x:Name="Ellipse8" Fill="#CC777777" Canvas.Left="3" Canvas.Top="19" Height="8" Width="8"/>
+                        </Canvas>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

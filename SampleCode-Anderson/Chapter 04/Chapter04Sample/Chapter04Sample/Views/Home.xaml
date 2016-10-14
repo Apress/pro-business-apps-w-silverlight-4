@@ -1,0 +1,34 @@
+﻿<navigation:Page
+  x:Class="Chapter04Sample.Home" 
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+  mc:Ignorable="d" d:DesignWidth="640" d:DesignHeight="480"  
+  Style="{StaticResource PageStyle}" NavigationCacheMode="Enabled"
+    >
+
+    <Grid x:Name="LayoutRoot">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                <TextBlock Height="23" Text="Product ID: " Padding="0,4,0,0" />
+                <TextBox Height="23" Name="ProductIDTextBox" Width="120" />
+            </StackPanel>
+            <Button Content="Pass Product ID Using Full Query String" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Name="NavigateFullQueryStringButton" Click="NavigateFullQueryStringButton_Click" Grid.Row="1" />
+            <Button Content="Pass Product ID Using Mapped Uri" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Name="NavigateMappedQueryStringButton" Click="NavigateMappedQueryStringButton_Click" Grid.Row="2" />
+            <HyperlinkButton Content="Navigate Using XAML Only (note Product ID will not be passed)" HorizontalAlignment="Center" VerticalAlignment="Center" NavigateUri="ProductDetails" Grid.Row="3" />
+            <TextBlock Text="(Note that the NavigationCacheMode property on this view has been set to Enabled so that the page will be cached, resulting in the Product ID being remembered when you return to this view)." TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" />
+            <TextBlock Text="(Also note the view transitions)." TextWrapping="Wrap" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Grid.Row="5" />
+        </Grid>
+    </Grid>
+
+</navigation:Page>

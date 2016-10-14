@@ -1,0 +1,75 @@
+﻿<navigation:Page x:Class="Chapter10Sample.Views.AdvancedDataBindingView" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           xmlns:models="clr-namespace:Chapter10Sample.Models"
+           xmlns:xd="http://schemas.yourbusinessurl.com/XAML"
+           mc:Ignorable="d"
+           d:DesignWidth="960" d:DesignHeight="480"
+           Title="Advanced Data Binding">
+    <Grid x:Name="LayoutRoot" Width="960" Height="250">
+        <Grid.Resources>
+            <!--Define resources containing data to display in the lists (wrapped in views)-->
+            <models:AdvancedDataBindingSourceData x:Key="data" />
+            <CollectionViewSource x:Name="cvs" Source="{Binding People, Source={StaticResource data}}"/>
+
+            <!--Define each custom value converter as a resource so that we can use it.
+            Note that the namespace we assigned to the xd namespace prefix is a
+            consolidated namespace which we defined ourselves in Assembly.cs-->
+            <xd:EnumEqualityValueConverter x:Key="EnumConverter" />
+            <xd:VisibilityValueConverter x:Key="VisibilityConverter" />
+        </Grid.Resources>
+
+        <StackPanel Orientation="Horizontal">
+            <StackPanel>
+                <TextBlock Text="Using a PagedCollectionView:" Width="300" />
+                <Grid DataContext="{Binding Path=PeopleView, Source={StaticResource data}}" Width="300">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="135" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="115" />
+                        <RowDefinition Height="27" />
+                    </Grid.RowDefinitions>
+                    <ListBox Grid.Column="1" ItemsSource="{Binding}" />
+                    <TextBox Grid.Column="1" Grid.Row="1" Margin="0,2" Text="{Binding Path=CurrentItem}" IsReadOnly="True" />
+                    <TextBlock HorizontalAlignment="Right" Margin="5,0" Text="Select an item here:" VerticalAlignment="Top" />
+                    <TextBlock Grid.Row="1" HorizontalAlignment="Right" Margin="5,0" Text="Selected item:" VerticalAlignment="Center" />
+                </Grid>
+            </StackPanel>
+            
+            <StackPanel Margin="30,0,0,0">
+                <TextBlock Text="Using a CollectionViewSource:" Width="300" />
+                <Grid DataContext="{StaticResource cvs}" Width="300">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="135" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="115" />
+                        <RowDefinition Height="27" />
+                    </Grid.RowDefinitions>
+                    <ListBox Grid.Column="1" ItemsSource="{Binding}" />
+                    <TextBox Grid.Column="1" Grid.Row="1" Margin="0,2" Text="{Binding Path=CurrentItem}" IsReadOnly="True" />
+                    <TextBlock HorizontalAlignment="Right" Margin="5,0" Text="Select an item here:" VerticalAlignment="Top" />
+                    <TextBlock Grid.Row="1" HorizontalAlignment="Right" Margin="5,0" Text="Selected item:" VerticalAlignment="Center" />
+                </Grid>
+            </StackPanel>
+
+            <StackPanel Margin="30,0,0,0" DataContext="{StaticResource data}">
+                <TextBlock Text="Binding to an enumeration using a value converter:" Width="300" />
+                <RadioButton Content="&lt; 20" IsChecked="{Binding AgeBracket, Mode=TwoWay, Converter={StaticResource EnumConverter}, ConverterParameter=BelowTwenty}" />
+                <RadioButton Content="20 to 29" IsChecked="{Binding AgeBracket, Mode=TwoWay, Converter={StaticResource EnumConverter}, ConverterParameter=Twenties}" />
+                <RadioButton Content="30 to 39" IsChecked="{Binding AgeBracket, Mode=TwoWay, Converter={StaticResource EnumConverter}, ConverterParameter=Thirties}" />
+                <RadioButton Content="40 Plus" IsChecked="{Binding AgeBracket, Mode=TwoWay, Converter={StaticResource EnumConverter}, ConverterParameter=FourtyPlus}" />
+                <Button Content="Display Value" Name="DisplayValueButton" Click="DisplayValueButton_Click" />
+                <TextBlock Text="Using ElementName binding and a value converter to hide/show a text box bound to this check box:" Width="300" TextWrapping="Wrap" Margin="0,30,0,0" />
+                <CheckBox Name="ShowHideCheckBox" Content="Select me!" />
+                <TextBlock Text="Hello!" Foreground="Red" Visibility="{Binding ElementName=ShowHideCheckBox, Path=IsChecked, Converter={StaticResource VisibilityConverter}}" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</navigation:Page>
